@@ -23,6 +23,7 @@ let wombat = {
     candyCancel: "#app > div.base-layout.base-layout--green-bg > div.base-layout__main > div.popup > div > div > button.btn.btn--outlined.confirm-send-wombat-with-claimable-candy-modal__btn.confirm-send-wombat-with-claimable-candy-modal__btn--reject",
     unexpectedError: "#app > div.popup.error-view > div > div > button",
     claimLevelUp: "#app > div.base-layout > div.base-layout__main.base-layout__main--with-reward > div.reward-claimable > div.claim-level.claim-level--active > button",
+    backButton:"#app .page-title__back-btn",
     pages: {
       //clan: "#app > div.base-layout.base-layout--black-bg > div.base-layout__main > div > div > div:nth-child(1) > a",
       clan: "a[href='/clan/home']", 
@@ -105,7 +106,7 @@ let wombat = {
       // Check if currentPage !== dungeon
       if (wombat.getCurrentPageName() !== 'dungeon') {
         console.log('--dbg-- WRONG PAGE FOR STARTING CHECK...');
-        autoFarmEngine.getElement(wombat.paths.pages.dungeonFromClan).click();
+        autoFarmEngine.getElement(wombat.paths.backButton).click();
         await autoFarmEngine.sleep(wombat.delay.afterAction);
       }
 
